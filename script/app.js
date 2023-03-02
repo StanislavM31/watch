@@ -1,18 +1,16 @@
-function getData() {
-  let data = new Date();
-  /* let time = `${data.getHours()}:${data.getMinutes()}:${data.getSeconds()}`; */
-  let t = data.toLocaleTimeString();
-  return t;
+
+class AppleWatch{
+  setData(d){
+    this.date = d.toLocaleTimeString();
+    return this.date;
+  }
+
 }
 
-
-function showTime() {
+function fixHtml(){
   let p = document.querySelector(".par");
-  p.innerHTML = getData();
+  p.innerHTML = appleWatch.setData(new Date());
 }
 
-
-
-setInterval(showTime, 1000)
-
-
+let appleWatch = new AppleWatch();
+setInterval(fixHtml, 1000)
