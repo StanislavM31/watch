@@ -1,31 +1,16 @@
-/* class AppleWatch{
-  constructor(){
-    setTimeout(this.fixHtml, 1000);
-  }
 
-  setData(){
-    let a = new Date();
-    return a.toLocaleTimeString();
-  }
-
-  fixHtml(){
-    let pTag = document.querySelector('.par');
-    pTag.innerHTML = this.setData();
-  }
-} */
 class AppleWatch{
-  constructor(){
-    setTimeout(this.fixHtml, 1000);
+  setData(d){
+    this.date = d.toLocaleTimeString();
+    return this.date;
   }
 
-  setData(){
-    let a = new Date();
-    return a.toLocaleTimeString();
-  }
-
-  fixHtml(){
-    let pTag = document.querySelector('.par');
-    pTag.innerHTML = apple.setData();
-  }
 }
-let apple = new AppleWatch();
+
+function fixHtml(){
+  let p = document.querySelector(".par");
+  p.innerHTML = appleWatch.setData(new Date());
+}
+
+let appleWatch = new AppleWatch();
+setInterval(fixHtml, 1000)
